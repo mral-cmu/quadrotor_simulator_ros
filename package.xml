@@ -3,16 +3,20 @@
 <package format="3">
   <name>quadrotor_simulator_ros</name>
   <version>0.0.0</version>
-  <description>TODO: Package description</description>
+  <description>ROS2 wrapper over quadrotor_simulator_py</description>
   <maintainer email="kshitijgoel16061995@gmail.com">kshitijgoel</maintainer>
   <license>TODO: License declaration</license>
 
-  <test_depend>ament_copyright</test_depend>
-  <test_depend>ament_flake8</test_depend>
-  <test_depend>ament_pep257</test_depend>
+  <buildtool_depend>ament_cmake</buildtool_depend>
+  <buildtool_depend>ament_cmake_python</buildtool_depend>
+
+  <depend>rclpy</depend>
+  <depend>quadrotor_simulator_py</depend>
+  <depend>quadrotor_msgs</depend>
+
   <test_depend>python3-pytest</test_depend>
 
   <export>
-    <build_type>ament_python</build_type>
+    <build_type>ament_cmake</build_type>
   </export>
 </package>
