@@ -3,8 +3,6 @@ import os
 import rclpy
 from rclpy.node import Node
 
-from ament_index_python import get_package_share_directory
-
 from visualization_msgs.msg import Marker
 from std_msgs.msg import ColorRGBA
 
@@ -59,8 +57,7 @@ class VehicleRVizNode(Node):
     def __init__(self, color):
         super().__init__('vehicle_rviz_node')
 
-        self.filename = 'package://quadrotor_simulator_py/data/vehicle.dae'
-        print(self.filename)
+        self.filename = 'package://quadrotor_simulator_py/assets/vehicle.dae'
 
         self.publisher = self.create_publisher(Marker, 'vehicle_mesh', 10)
 
@@ -85,7 +82,8 @@ class VehicleRVizNode(Node):
         self.marker.frame_locked = True
         self.marker.mesh_resource = self.filename
 
-        self.vehicle_viz_timer = self.create_timer(1.0/30.0, self.vehicle_viz_callback)
+        self.vehicle_viz_timer = self.create_timer(
+            1.0/300.0, self.vehicle_viz_callback)
 
     def vehicle_viz_callback(self):
         current_time = self.get_clock().now()

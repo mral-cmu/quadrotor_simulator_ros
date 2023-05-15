@@ -1,5 +1,5 @@
 <launch>
-  <node pkg="quadrotor_simulator_ros" exec="quadrotor_simulator_node" name="sim" namespace="rocky0704"/>
+  <node pkg="quadrotor_simulator_ros" exec="quadrotor_simulator_node" name="sim" namespace="rocky0704" output="screen"/>
   <node pkg="quadrotor_simulator_ros" exec="vehicle_rviz_node" name="viz" namespace="rocky0704"/>
-  <node pkg="rviz2" exec="rviz2" name="rviz2"/>
+  <node pkg="rviz2" exec="rviz2" name="rviz2" args="-d $(find-pkg-share quadrotor_simulator_ros)/config/default.rviz"/>
 </launch>
