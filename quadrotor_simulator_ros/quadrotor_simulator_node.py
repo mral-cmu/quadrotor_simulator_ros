@@ -72,7 +72,7 @@ class QuadrotorSimulatorNode(Node):
         # Load bagfile
         cwd = os.getcwd()
         bagfilepath = None
-        bagfilename = "room_2023-05-08-15-47-16.bag"
+        bagfilename = "room_2023-05-22-13-29-19.bag"
         sandbox = "quadrotor_simulator_ws"
         if sandbox in cwd:
             bagfilepath = cwd.split(sandbox)
@@ -102,10 +102,10 @@ class QuadrotorSimulatorNode(Node):
                 ts.transform.translation.z = translation[2]
 
                 quaternion = Twb.quaternion()
-                ts.transform.rotation.w = quaternion[0, 0]
-                ts.transform.rotation.x = quaternion[1, 0]
-                ts.transform.rotation.y = quaternion[2, 0]
-                ts.transform.rotation.z = quaternion[3, 0]
+                ts.transform.rotation.w = quaternion[0]
+                ts.transform.rotation.x = quaternion[1]
+                ts.transform.rotation.y = quaternion[2]
+                ts.transform.rotation.z = quaternion[3]
 
                 ts.header.stamp = self.get_clock().now().to_msg()
                 ts.header.frame_id = self.fixed_frame_id
