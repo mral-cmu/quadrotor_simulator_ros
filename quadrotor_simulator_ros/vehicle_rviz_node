@@ -59,7 +59,7 @@ class VehicleRVizNode(Node):
     def __init__(self, color):
         super().__init__('vehicle_rviz_node')
 
-        self.filename = 'package://quadrotor_simulator_py/assets/vehicle.dae'
+        self.filename = 'package://quadrotor_simulator_ros/assets/vehicle.dae'
 
         self.publisher = self.create_publisher(Marker, 'vehicle_mesh', 10)
 

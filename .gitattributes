@@ -1,0 +1,2 @@
+assets/vehicle.dae filter=lfs diff=lfs merge=lfs -text
+assets/_0.jpg filter=lfs diff=lfs merge=lfs -text
