@@ -207,8 +207,6 @@ class QuadrotorSimulatorNode(Node):
                     self.marker_array_pub.publish(self.marker_array)
                     prev_translation = translation
 
-                    self.get_logger().info(str(len(self.marker_array.markers)))
-
                 end = time.time()
                 if (end-start) < (extract_time(msg)-prev_time):
                     time.sleep( (extract_time(msg)-prev_time) - (end-start) )
