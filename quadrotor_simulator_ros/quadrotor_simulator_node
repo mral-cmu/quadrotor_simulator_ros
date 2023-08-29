@@ -116,7 +116,7 @@ class QuadrotorSimulatorNode(Node):
         # Load bagfile
         cwd = os.getcwd()
         bagfilepath = None
-        bagfilename = "room_2023-05-22-13-29-19.bag"
+        bagfilename = "room_2023-05-28-07-18-08.bag"
         sandbox = "quadrotor_simulator_ws"
         if sandbox in cwd:
             bagfilepath = cwd.split(sandbox)
